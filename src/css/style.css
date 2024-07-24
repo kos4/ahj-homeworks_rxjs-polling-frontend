@@ -1,0 +1,16 @@
+.letters {
+  width: fit-content;
+  border: 1px solid black;
+}
+
+.letters__item {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+
+.letters__item:last-child {
+  border: none;
+}
