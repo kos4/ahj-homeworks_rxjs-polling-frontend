@@ -1,5 +1,4 @@
-import Data from "./Data";
-import Messages from "./Messages";
+import Data from './Data';
 
 const data = new Data();
 const container = document.querySelector('.letters');

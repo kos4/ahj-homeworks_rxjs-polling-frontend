@@ -1,6 +1,6 @@
 import { ajax } from 'rxjs/ajax';
 import { map, catchError, of } from 'rxjs';
-import Messages from "./Messages";
+import Messages from './Messages';
 
 export default class Data {
   constructor() {
@@ -11,8 +11,8 @@ export default class Data {
     const messages = new Messages(container);
     const obs$ = this.createRequest('messages/unread');
     obs$.subscribe({
-      next: value => messages.addMessages(value),
-      error: err => console.log(err)
+      next: (value) => messages.addMessages(value),
+      error: (err) => console.log(err),
     });
   }
 
@@ -21,11 +21,11 @@ export default class Data {
       url: this.host + url,
       crossDomain: true,
     }).pipe(
-      map(ajaxResponse => ajaxResponse.response.messages),
-      catchError(error => {
+      map((ajaxResponse) => ajaxResponse.response.messages),
+      catchError((error) => {
         console.log('error: ', error);
         return of([]);
-      })
+      }),
     );
   }
 }
